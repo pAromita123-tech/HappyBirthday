@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  text-align: center;
+}
+
+#login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#content {
+  display: none;
+  padding: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4b5c;
+  color: white;
+  cursor: pointer;
+}
+
+.letter {
+  display: none;
+  background: rgba(255,255,255,0.2);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  white-space: pre-line;
+}
+
+/* 💓 Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+/* 🌟 Glow Button */
+.glow-btn {
+  background: #fff;
+  color: #ff4b5c;
+  font-weight: bold;
+  box-shadow: 0 0 10px #fff, 0 0 20px #ff4b5c, 0 0 30px #ff4b5c;
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 5px #fff, 0 0 10px #ff4b5c;
+  }
+  to {
+    box-shadow: 0 0 15px #fff, 0 0 30px #ff4b5c;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔒 PASSWORD -->
+<div id="login">
+  <h2>💖 Enter Password 💖</h2>
+  <input type="password" id="pass" placeholder="Enter secret...">
+  <br>
+  <button onclick="unlock()">Unlock 💌</button>
+</div>
+
+<!-- 💕 CONTENT -->
+<div id="content">
+
+  <h1>🎂 Happy Birthday My Love 💖</h1>
+
+  <!-- 💌 LETTERS -->
+  <button onclick="toggleLetter('l1')">Open when you are sad 💔</button>
+  <div id="l1" class="letter">
+    You are stronger than you think… and I’m always here for you 💖  
+  </div>
+
+  <button onclick="toggleLetter('l2')">Open when you miss me 💕</button>
+  <div id="l2" class="letter">
+    Close your eyes… I’m right there with you 🤍  
+  </div>
+
+  <button onclick="toggleLetter('l3')">Open when you can’t sleep 🌙</button>
+  <div id="l3" class="letter">
+    Think about us… every memory… every smile 💫  
+  </div>
+
+  <button onclick="toggleLetter('l4')">Open anytime 💌</button>
+  <div id="l4" class="letter">
+    I love you… more than words can ever explain 💖  
+  </div>
+
+  <!-- 🎂 BIRTHDAY -->
+  <button onclick="toggleLetter('b1')">Open on your birthday 🎂</button>
+  <div id="b1" class="letter">
+    Happy Birthday my love 💖  
+    You are the best thing that ever happened to me 🎁  
+  </div>
+
+  <button onclick="toggleLetter('b2')">A wish just for you 🌟</button>
+  <div id="b2" class="letter">
+    I wish all your dreams come true…  
+    and I hope I’m always there beside you 💕  
+  </div>
+
+  <!-- 🤍 GLOW BUTTON -->
+  <button class="glow-btn" onclick="toggleLetter('b4')">
+    What I Love Most About You 🤍
+  </button>
+
+  <div id="b4" class="letter">
+What I Love Most About You 🤍
+
+What I love most about you isn’t just one big thing… it’s a hundred little things that slowly became everything to me.
+
+I love how you shows up—consistently, calmly, without making a big deal out of it. In the middle of busy workdays and deadlines, you still finds time to check on me, to ask if I’ve eaten, to make sure I’m okay. It’s simple, but it means so much.
+
+There are days ,where we are fighting and arguing to the most. When i questioned myself , if i made a good choice for my life ?? or what if you are not LOYAL to me ?? what if you don't understand what TRANSPARENCY and CARE means ?? What if you pretending everything ?? what if you are lying ?? What if our marriage life will not be successful. 
+But Still after seeing you on Video Call ,i feel you are and will always be true to me .And I TRUST YOU. which you will not break at any cost. 
+
+I love how easy it feels with you. There’s no pressure to be perfect, no need to overthink every word. I can just be myself—and somehow, that’s enough for you.
+
+I love the way you listens. Not just hears, but actually understands—even the things I don’t say out loud. And in a world that’s always rushing, that kind of patience feels rare.
+
+I love how you are become my quiet comfort. Whether it’s through late-night calls, random conversations, or just knowing you're there… you brings a sense of peace I didn’t know I needed.
+
+And maybe what I love most is this feeling—that with you, everything feels right. Not perfect, not like a fairytale… but real, steady, and something I can truly rely on.
+
+You're not just someone I’m going to marry… you're someone I’m grateful for, every single day 🤍
+
+HAPPY BIRTHDAY HUSBAND.
+
+DON'T GET EMOTIONAL WHILE READING IT TUBLUAHHH.
+
+Stay Always By My Side and Love me like you do.
+  </div>
+
+  <button onclick="toggleLetter('b3')">One last surprise 🎁</button>
+  <div id="b3" class="letter">
+    If you reached here…  
+    I just want to say —  
+    I love you more every single day 💖  
+  </div>
+
+</div>
+
+<script>
+const password = "love123";
+
+function unlock() {
+  if (document.getElementById("pass").value === password) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    alert("Wrong password 💔");
+  }
+}
+
+function toggleLetter(id) {
+  const letter = document.getElementById(id);
+
+  if (letter.style.display === "block") {
+    letter.style.display = "none";
+  } else {
+    letter.style.display = "block";
+  }
+}
+
+// 💓 Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
+</script>
+
+</body>
+</html>
